@@ -14,6 +14,15 @@
             <div class="col-8">
                 <h1>Upload img validate</h1>
                 <hr>
+                <form method="POST" action="handlers/store.php" enctype="multipart/form-data">
+
+                    <div class="mb-3">
+                        <label for="img" class="form-label">Choose img</label>
+                        <input type="file" class="form-control" name="img" id="img">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>
             </div>
         </div>
     </div>
