@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 
@@ -14,6 +15,16 @@
             <div class="col-8">
                 <h1>Upload img validate</h1>
                 <hr>
+                <?php if (isset($_SESSION['success'])) : ?>
+                    <div class="alert alert-success"><?= $_SESSION['success'] ?></div>
+                <?php
+                    unset($_SESSION['success']);
+                endif; ?>
+                <?php if (isset($_SESSION['error'])) : ?>
+                    <div class="alert alert-danger"><?= $_SESSION['error'] ?></div>
+                <?php
+                    unset($_SESSION['error']);
+                endif; ?>
                 <form method="POST" action="handlers/store.php" enctype="multipart/form-data">
 
                     <div class="mb-3">
